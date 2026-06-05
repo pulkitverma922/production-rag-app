@@ -1,10 +1,17 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 import traceback, os
 from app.routers import ingest, query
 
 app = FastAPI(title="RAG Pipeline API", version="1.0.0")
+
+app.mount(
+    "/static",
+    StaticFiles(directory=os.path.join(os.path.dirname(__file__), "app", "static")),
+    name="static",
+)
 
 app.add_middleware(
     CORSMiddleware,
