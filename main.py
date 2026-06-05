@@ -32,6 +32,6 @@ def health_check():
 
 @app.get("/", response_class=HTMLResponse)
 def serve_frontend():
-    path = os.path.join(os.path.dirname(__file__), "index.html")
+    path = os.path.join(os.path.dirname(__file__), "app", "static", "index.html")
     with open(path, "r", encoding="utf-8") as f:
         return HTMLResponse(f.read())
