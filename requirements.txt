@@ -1,0 +1,25 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# Document loaders
+pymupdf       # PDF loading (fitz)
+python-docx   # DOCX loading
+
+# OpenAI
+sentence-transformers
+ 
+# LLM — FREE Groq API (llama3)
+groq
+
+# Pinecone
+pinecone
+
+# File uploads
+python-multipart
+
+# Dev/testing
+httpx         # for FastAPI TestClient
+pytest
+pytest-asyncio
